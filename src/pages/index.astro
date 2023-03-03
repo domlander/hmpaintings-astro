@@ -1,81 +1,102 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Header from '../components/Header.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Heather Miller Paintings">
 	<main>
-		<h1>Heather Miller Paintings</h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<div class="page-layout">
+			<h1>Heather Miller Paintings</h1>
+			<Header />
+			<!-- <p class="tagline">CONTEMPORARY ARTIST IN HERTFORDSHIRE INSPIRED BY THE NATURAL WORLD</p> -->
+			<section class="page-section intro">
+				<h2>Current Exhibitions</h2>
+				<div class="section-content">
+					<img src="heather-1.jpg" alt="Photo of Heather in front of her art" />
+					<section class="exhibition-list">
+						<article class="exhibition">
+							<h3>The Affinity Exhibition</h3>
+							<p>A friendship forged through paint. I am delighted to be exhibiting in a joint exhibition with my dear friend Annmarie Thomas at Fisherton Mill in Salisbury. The exhibition runs from 8th January to 5th February</p>
+						</article>
+						<article class="exhibition">
+							<h3>ART @ MG</h3>
+							<p>Mardleybury Gallery.<br />Open Thursday - Sunday<br />11:00am - 4:30pm</p>
+						</article>
+						<article class="exhibition">
+							<h3>Contemporary Art Fairs</h3>
+							<p>Sandown Park Racecourse<br />Surrey<br />4th-6th March 2022</p>
+						</article>
+						<p>My work also available at The Wynd Gallery, Parndon Mill and The Corner Gallery Carshalton</p>
+					</section>
+				</div>
+			</section>
+		</div>
 	</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		width: 100%;
+		padding-top: 1em;
+	}
+	.page-layout {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+	section {
+		margin: 0 1em;
+	}
+	section.page-section {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+	.section-content {
+		display: flex;
+		gap: 2em;
 	}
 	h1 {
 		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
+		line-height: 6rem;
+		font-weight: 200;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		text-align: center;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	h2 {
+		font-size: 2.2rem;
+		line-height: 2.6rem;
+		font-weight: 300;
+		letter-spacing: 0.1rem;
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+	h3 {
+		font-size: 1.6rem;
+		line-height: 2rem;
+		font-weight: 300;
+		opacity: 90%;
 	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
+	p {
+		font-size: 1.1rem;
+		line-heigh: 1.2rem;
+		color: #444;
 	}
-	.instructions strong {
-		color: rgb(var(--accent));
+	.exhibition-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
 	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+	.exhibition {
+		display: flex;
+		flex-direction: column;
+		gap: .4em;
+	}
+	.tagline {
+		margin: 1em;
+		font-size: 1.2rem;
+		line-height: 1.6rem;
+		letter-spacing: 0.1rem;
+		font-weight: 200;
+		font-style: italic;
 	}
 </style>
